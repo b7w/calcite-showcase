@@ -1,0 +1,19 @@
+# Datasource
+datasource:
+  # First
+  oracle:
+    jdbc-url: 'jdbc:oracle:thin:@127.0.0.1:1521:xe'
+    username: 'db1'
+    password: 'q1w2e3r4'
+  # Second
+  postgres:
+    jdbc-url: 'jdbc:postgresql://127.0.0.1:5432/db2'
+    username: 'db2'
+    password: 'q1w2e3r4'
+
+logging:
+  level:
+    org.springframework.jdbc.core: info
+    org.apache.calcite: info
+    org.apache.calcite.plan.AbstractRelOptPlanner.rule_execution_summary: debug
+    me.b7w.calcite: debug

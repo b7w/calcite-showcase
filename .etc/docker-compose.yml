@@ -1,0 +1,32 @@
+version: '3'
+services:
+  oracle:
+    image: doctorkirk/oracle-19c:latest
+    environment:
+      ORACLE_SID: "xe"
+      ORACLE_PWD: "q1w2e3r4"
+    ports:
+      - "1521:1521"
+    volumes:
+      - ./oracle.sql:/opt/oracle/scripts/startup/init_db.sql:ro
+    logging:
+      driver: json-file
+      options:
+        max-file: "1"
+        max-size: "1m"
+
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: "db2"
+      POSTGRES_USER: "db2"
+      POSTGRES_PASSWORD: "q1w2e3r4"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgresql.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    logging:
+      driver: json-file
+      options:
+        max-file: "1"
+        max-size: "1m"
