@@ -15,5 +15,5 @@ logging:
   level:
     org.springframework.jdbc.core: info
     org.apache.calcite: info
-    org.apache.calcite.plan.AbstractRelOptPlanner.rule_execution_summary: debug
+    org.apache.calcite.plan.AbstractRelOptPlanner.rule_execution_summary: warn
     me.b7w.calcite: debug
